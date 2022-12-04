@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<meta charset="UTF-8">
+</head>
+<body>
+<style>
+    body{
+background-color: #232323;
+}
+#con{
+width: 1000px;
+min-height: 500px;
+background-color: #888;
+margin-left: auto;
+margin-right: auto;
+}
+.basictext{
+width: 300px;
+height: 50px;
+font-size: 35px;
+padding: 0px 3px 0px 3px;
+margin: 50px 345px 50px 345px;
+border: 2px gray solid;
+}
+.basictext:focus{
+background-color: #efe;
+border: 2px aqua solid;
+}
+#N_button{
+width: 200px;
+height: 40px;
+font-size: 30px;
+font-weight: 600;
+margin: 50px 400px 50px 400px;
+background-color: #0cc;
+border: 2px gray solid;
+transition: all .4s ease-in-out;
+cursor: pointer;
+}
+#N_button:hover{
+border: 2px lime solid;
+background-color: #0ee;
+}
+#S_button{
+width: 250px;
+height: 50px;
+font-size: 38px;
+font-weight: 600;
+margin: 80px 373px 20px 373px;
+background-color: #cc0;
+border: 2px gray solid;
+transition: all .4s ease-in-out;
+cursor: pointer;
+}
+#S_button:hover{
+border: 2px lime solid;
+background-color: #ee0;
+}
+#St_button{
+width: 250px;
+height: 50px;
+font-size: 38px;
+font-weight: 600;
+margin: 20px 373px 20px 373px;
+background-color: #0cc;
+border: 2px gray solid;
+transition: all .4s ease-in-out;
+cursor: pointer;
+}
+#St_button:hover{
+border: 2px lime solid;
+background-color: #0ee;
+}
+.But_mode{
+width: 200px;
+height: 40px;
+font-size: 30px;
+font-weight: 600;
+margin: 0px 398px 0px 398px;
+}
+#But_lock_5{
+background-color: #a5a5a5;
+}
+.But_unlock:hover{
+background-color: #d9d;
+}
+#But_1{
+background-color: #d99;
+border: 2px gray solid;
+transition: all .4s ease-in-out;
+cursor: pointer;
+}
+#But_1:hover{
+background-color: #fcc;
+border: 2px green solid;
+}
+#But_2{
+background-color: #99d;
+border: 2px gray solid;
+transition: all .4s ease-in-out;
+cursor: pointer;
+}
+#But_2:hover{
+background-color: #ccf;
+border: 2px green solid;
+}
+#But_3{
+background-color: #9d9;
+border: 2px gray solid;
+transition: all .4s ease-in-out;
+cursor: pointer;
+}
+#But_3:hover{
+background-color: #cfc;
+border: 2px green solid;
+}
+#But_4{
+background-color: #dd9;
+border: 2px gray solid;
+transition: all .4s ease-in-out;
+cursor: pointer;
+}
+#But_4:hover{
+background-color: #ffc;
+border: 2px green solid;
+}
+#But_5{
+background-color: #d9d;
+border: 2px gray solid;
+transition: all .4s ease-in-out;
+cursor: pointer;
+}
+#But_5:hover{
+background-color: #fcf;
+border: 2px green solid;
+}
+#losemenu{
+background-color: #dd9;
+border: 2px gray solid;
+transition: all .4s ease-in-out;
+}
+#losemenu:hover{
+background-color: #ffc;
+border: 2px red solid;
+}
+#try{
+background-color: #d99;
+border: 2px gray solid;
+transition: all .4s ease-in-out;
+}
+#try:hover{
+background-color: #fcc;
+border: 2px red solid;
+}
+.big{
+font-size: 60px;
+font-weight: 600;
+text-align: center;
+margin: 20px;
+}
+.littlebig{
+font-size: 50px;
+font-weight: 600;
+text-align: center;
+margin: 20px;
+}
+.avarge{
+font-size: 25px;
+font-weight: 600;
+}
+#level{
+font-size: 40px;
+font-weight: 600;
+float: left;
+margin: 20px 50px 5px 50px;
+}
+#quest{
+font-size: 36px;
+}
+#answer{
+width: 300px;
+height: 45px;
+padding: 2px;
+margin: 20px;
+font-size: 35px;
+}
+#check{
+width: 220px;
+height: 40px;
+margin: 20px;
+font-size: 30px;
+font-weight: 600;
+transition: all .4s ease-in-out;
+border: 2px gray solid;
+background-color: #dcd;
+cursor: pointer;
+}
+#check:hover{
+border: 2px aqua solid;
+background-color: #fbf;
+}
+.trispace{
+height: 135px;
+width: 1000px;
+}
+.space{
+height: 45px;
+width: 1000px;
+}
+.half_space{
+height: 25px;
+width: 1000px;
+}
+#score{
+font-size: 30px;
+margin: 30px 50px 5px 50px;
+float: right;
+}
+.return{
+width: 150px;
+height: 40px;
+font-size: 28px;
+float: left;
+background-color: #ddd;
+border-color: gray;
+transition: all .4s ease-in-out;
+cursor: pointer;
+}
+.return:hover{
+background-color: #eee;
+border-color: green;
+}
+#lives{
+font-size: 30px;
+margin: 30px 50px 5px 50px; 
+float: right;
+}
+#xparea{
+width: 300px;
+height: 80px;
+background-color: #bbd;
+float: right;
+}
+#xplevel{
+margin: 10px;
+float: left;
+}
+#l{
+font-family: Arial;
+}
+.l0{
+font-size: 45px;
+}
+.l1{
+font-size: 34px;
+}
+#xpupper{
+width: 220px;
+height: 40px;
+margin-left: 80px;
+font-size: 25px;
+text-align: center;
+}
+#xplower{
+width: 220px;
+height: 40px;
+margin-left: 80px;
+font-size: 22px;
+text-align: center;
+}
+.wood{
+background-color: #502F0E;
+width: 60px;
+height: 60px;
+}
+.stone{
+background-color: #5A5A5A;
+width: 60px;
+height: 60px;
+}
+.copper{
+background-color: #FFB266;
+width: 60px;
+height: 60px;
+}
+.iron{
+background-color: #9C9C9C;
+width: 60px;
+height: 60px;
+}
+.bronze{
+background-color: #A26222;
+width: 60px;
+height: 60px;
+}
+.silver{
+background-color: #A5A5A5;
+width: 60px;
+height: 60px;
+}
+.gold{
+background-color: #E8EF14;
+width: 60px;
+height: 60px;
+}
+.platinium{
+background-color: #9EE1F9;
+width: 60px;
+height: 60px;
+}
+.diamond{
+background-color: #32B7E8;
+width: 60px;
+height: 60px;
+}
+.ruby{
+background-color: #F75B5B;
+width: 60px;
+height: 60px;
+}
+.emerald{
+background-color: #52F262;
+width: 60px;
+height: 60px;
+}
+.sapphire{
+background-color: #2B18D7;
+width: 60px;
+height: 60px;
+}
+.amhetyst{
+background-color: #A231E4;
+width: 60px;
+height: 60px;
+}
+.obsidian{
+background-color: #432692;
+width: 60px;
+height: 60px;
+}
+.legend{
+background-color: #6A3DE5;
+width: 60px;
+height: 60px;
+}
+.bronzelegend{
+background-color: #6A3DE5;
+border: 2px #A26222 solid;
+width: 56px;
+height: 56px;
+}
+.silverlegend{
+background-color: #6A3DE5;
+border: 2px #A5A5A5 solid;
+width: 56px;
+height: 56px;
+}
+.goldlegend{
+background-color: #6A3DE5;
+border: 2px #E8EF14 solid;
+width: 56px;
+height: 56px;
+}
+.platiniumlegend{
+background-color: #6A3DE5;
+border: 2px #9EE1F9 solid;
+width: 56px;
+height: 56px;
+}
+.diamondlegend{
+background-color: #6A3DE5;
+border: 2px #32B7E8 solid;
+width: 56px;
+height: 56px;
+}
+.rubylegend{
+background-color: #6A3DE5;
+border: 2px #F75B5B solid;
+width: 56px;
+height: 56px;
+}
+.emeraldlegend{
+background-color: #6A3DE5;
+border: 2px #52F262 solid;
+width: 56px;
+height: 56px;
+}
+.sapphirelegend{
+background-color: #6A3DE5;
+border: 2px #2B18D7 solid;
+width: 56px;
+height: 56px;
+}
+.amhetystlegend{
+background-color: #6A3DE5;
+border: 2px #A231E4 solid;
+width: 56px;
+height: 56px;
+}
+.obsidianlegend{
+background-color: #6A3DE5;
+border: 2px #432692 solid;
+width: 56px;
+height: 56px;
+}
+.ultimatelegend{
+background-color: #6A3DE5;
+border: 2px #000000 solid;
+width: 56px;
+height: 56px;
+}
+#statstable{
+width: 600px;
+font-size: 25px;
+}
+</style>
+<div id="root"></div>
+<script type="text/babel">
+var savelevel = new Array(5);
+savelevel[0]=1;savelevel[1]=1;savelevel[2]=1;savelevel[3]=1;savelevel[4]=1;
+var maxlevel = new Array(5);
+maxlevel[0]=1;maxlevel[1]=1;maxlevel[2]=1;maxlevel[3]=1;maxlevel[4]=1;
+var nick = "Player";
+var La = new Array(3);
+var Lb = new Array(3);
+var score = new Array(8);
+var xp = new Array(4);
+var kxp = new Array(2);
+var mxp = new Array(2);
+var bxp = new Array(2);
+var txp = new Array(2);
+var qaxp = new Array(2);
+var qtxp = new Array(2);
+var xpplus = 0;
+var kxpplus = 0;
+var mxpplus = 0;
+var bxpplus = 0;
+xp[0]=0;xp[1]=100;xp[2]=0;xp[3]=0;
+var powtitle = "None";
+var power = 1;
+const maxlvl = 100;
+score[0] = 0;
+score[1] = 10;
+score[2] = 0;
+score[3] = 5;
+score[4] = 0;
+score[5] = 15;
+score[6] = 0;
+score[7] = 10;
+var level = 1;
+var mod = 0;
+var lelevel = 0;
+var lvl = "Trival";
+var pow10 = 0;
+var lives = 5;
+var goods = 0;
+var bads = 0;
+var ratio = 0;
+function name(){
+ReactDOM.render(<div><div id="con"><center><span className="big">"Whats your name"</span></center><input type="text" id="basic" className="basictext" maxLength="16"></input><input id="N_button" type="button" value="Confirm" onClick={name2}></input></div></div>,document.getElementById("root"));
+};
+function name2(){
+nick = document.getElementById("basic").value;
+start();
+}
+function start(){
+ReactDOM.render(<div><div id="con"><center><span id="welcome" className="big">"Welcome " {nick}</span></center><input id="S_button" type="button" value="Start" onClick={modes}></input><input id="St_button" type="button" value="Stats" onClick={stats}></input></div></div>,document.getElementById("root"));
+}
+function stats(){
+ratio = ((goods/(goods+bads))*100).toFixed(0);
+xp[3] = xp[2].toFixed(0);
+if(maxlevel[0]<savelevel[0])maxlevel[0]=savelevel[0];
+else if(maxlevel[1]<savelevel[1])maxlevel[1]=savelevel[1];
+else if(maxlevel[2]<savelevel[2])maxlevel[2]=savelevel[2];
+else if(maxlevel[3]<savelevel[3])maxlevel[3]=savelevel[3];
+else if(maxlevel[4]<savelevel[4])maxlevel[4]=savelevel[4];
+ReactDOM.render(<div><div id="con"><center><span className="big" id="statsname">{nick}</span><table id="statstable"><tr><td>Player level</td><td id="t1">{power}</td></tr><tr><td>total XP</td><td id="t2">{xp[3]}</td></tr><tr><td>Badge</td><td id="t3">{powtitle}</td></tr><tr><td>Good answers</td><td id="t4">{goods}</td></tr><tr><td>Bad answers</td><td id="t5">{bads}</td></tr><tr><td>Win ratio</td><td id="t6">{ratio}</td></tr><tr><td>Maxlvl Classic</td><td id="t7">{maxlevel[0]}</td></tr><tr><td>Maxlvl Quick</td><td id="t8">{maxlevel[1]}</td></tr><tr><td>Maxlvl Survival</td><td id="t9">{maxlevel[2]}</td></tr><tr><td>Maxlvl Heavy</td><td id="t10">{maxlevel[3]}</td></tr><tr><td>Maxlvl Special</td><td id="t11">{maxlevel[4]}</td></tr></table></center><div className="half_space"></div><input className="return" onClick={start} value="back" type="button"></input></div></div>,document.getElementById("root"));
+}
+function modes(){
+savelevel[0]=level;
+savelevel[1]=level;
+savelevel[2]=level;
+savelevel[3]=level;
+savelevel[4]=level;
+level=1;
+if(power<30)ReactDOM.render(<div><div id="con"><center><div className="half_space"></div><span className="big">Select a mode</span></center><div className="half_space"></div><input id="But_1" className="But_mode" type="button" value="Classic" onClick={mode1} title="Standard earning points needed to unlock new levels, Common gaining experience"></input><div className="half_space"></div><input id="But_2" className="But_mode" type="button" value="Quick" onClick={mode2} title="Much faster earning points than classic mode, a bit less gaining experiance"></input><div className="half_space"></div><input id="But_3" className="But_mode" type="button" value="Survival" onClick={mode3} title="Every good answer gives you next level but every bad answer loses one live! much less gaining experiance"></input><div className="half_space"></div><input id="But_4" className="But_mode" type="button" value="Heavy" onClick={mode4} title="All is slighty harder than classic mode, more gaining experiance"></input><div className="half_space"></div><input id="But_lock_5" className="But_mode" type="button" value="???" title="This mode requies iron badge (30 level)"></input><input className="return" onClick={start} value="back" type="button"></input></div></div>,document.getElementById("root"));
+else if(power>=30)ReactDOM.render(<div><div id="con"><center><div className="half_space"></div><span className="big">Select a mode</span></center><div className="half_space"></div><input id="But_1" className="But_mode" type="button" value="Classic" onClick={mode1} title="Standard earning points needed to unlock new levels, Common gaining experience"></input><div className="half_space"></div><input id="But_2" className="But_mode" type="button" value="Quick" onClick={mode2} title="Much faster earning points than classic mode, a bit less gaining experiance"></input><div className="half_space"></div><input id="But_3" className="But_mode" type="button" value="Survival" onClick={mode3} title="Every good answer gives you next level but every bad answer loses one live! much less gaining experiance"></input><div className="half_space"></div><input id="But_4" className="But_mode" type="button" value="Heavy" onClick={mode4} title="All is slighty harder than classic mode, more gaining experiance"></input><div className="half_space"></div><input id="But_5" className="But_mode" type="button" value="Special" onClick={mode5} title="If you answer correctly required number of quests You get will next level irreversibly! But one bad answer resets all your points! Less experiance than normal."></input><input className="return" onClick={start} value="back" type="button"></input></div></div>,document.getElementById("root"));
+}
+function mode1(){
+level = savelevel[0];
+ReactDOM.render(<div><div id="con"><span id="level">Level</span><span id="score">Score</span><div class="space"></div><center><div className="space"></div><span id="quest">Quest</span><br></br><input type="number" id="answer"></input><div id=""></div><input type="button" id="check" value="Check" onClick={check}></input></center><div className="space"><input type="button" value="Menu" className="return" onClick={modes}></input><div id="xparea"><center><div id="xplevel"><span id="l"></span></div></center><div id="xpupper"></div><div id="xplower"></div></div></div></div></div>,document.getElementById("root"));
+mod = 1;
+dif();
+window.setTimeout('next(1);',10);
+lvlpow();
+}
+function mode2(){
+level = savelevel[1];
+ReactDOM.render(<div><div id="con"><span id="level">Level</span><span id="score">Score</span><div class="space"></div><center><div className="space"></div><span id="quest">Quest</span><br></br><input type="number" id="answer"></input><div id=""></div><input type="button" id="check" value="Check" onClick={check}></input></center><div className="space"><input type="button" value="Menu" className="return" onClick={modes}></input><div id="xparea"><center><div id="xplevel"><span id="l"></span></div></center><div id="xpupper"></div><div id="xplower"></div></div></div></div></div>,document.getElementById("root"));
+mod = 2;
+dif();
+window.setTimeout('next(2);',10);
+lvlpow();
+}
+function mode3(){
+level = savelevel[2];
+ReactDOM.render(<div><div id="con"><span id="level">Level</span><span id="lives">Lives</span><div class="space"></div><center><div className="space"></div><span id="quest">Quest</span><br></br><input type="number" id="answer"></input><div id=""></div><input type="button" id="check" value="Check" onClick={check}></input></center><div className="space"><input type="button" value="Menu" className="return" onClick={modes}></input><div id="xparea"><center><div id="xplevel"><span id="l"></span></div></center><div id="xpupper"></div><div id="xplower"></div></div></div></div></div>,document.getElementById("root"));
+mod = 3;
+dif();
+window.setTimeout('next(3);',10);
+lvlpow();
+}
+function mode4(){
+level = savelevel[3];
+ReactDOM.render(<div><div id="con"><span id="level">Level</span><span id="score">Score</span><div className="space"></div><center><div className="space"></div><span id="quest">Quest</span><br></br><input type="number" id="answer"></input><div id=""></div><input type="button" id="check" value="Check" onClick={check}></input></center><div className="space"><input type="button" value="Menu" className="return" onClick={modes}></input><div id="xparea"><center><div id="xplevel"><span id="l"></span></div></center><div id="xpupper"></div><div id="xplower"></div></div></div></div></div>,document.getElementById("root"));
+mod = 4;
+dif();
+window.setTimeout('next(4);',10);
+lvlpow();
+}
+function mode5(){
+level = savelevel[4];
+ReactDOM.render(<div><div id="con"><span id="level">Level</span><span id="score">Score</span><div className="space"></div><center><div className="space"></div><span id="quest">Quest</span><br></br><input type="number" id="answer"></input><div id=""></div><input type="button" id="check" value="Check" onClick={check}></input></center><div className="space"><input type="button" value="Menu" className="return" onClick={modes}></input><div id="xparea"><center><div id="xplevel"><span id="l"></span></div></center><div id="xpupper"></div><div id="xplower"></div></div></div></div></div>,document.getElementById("root"));
+mod = 5;
+dif();
+window.setTimeout('next(5);',10);
+lvlpow();
+}
+function dif(){
+title();
+if(level<20){
+pow10=0;
+lelevel=level;
+}
+else{
+pow10=0;
+for(lelevel=level;lelevel>=20;lelevel-=10){
+pow10++;
+}
+}
+if(lelevel==1){
+La[1]=10;
+La[2]=1;
+Lb[1]=10;
+Lb[2]=1;
+}
+else if(lelevel==2){
+La[1]=10;
+La[2]=11;
+Lb[1]=10;
+Lb[2]=11;
+}
+else if(lelevel==3){
+La[1]=20;
+La[2]=21;
+Lb[1]=20;
+Lb[2]=21;
+}
+else if(lelevel==4){
+La[1]=30;
+La[2]=31;
+Lb[1]=30;
+Lb[2]=31;
+}
+else if(lelevel==5){
+La[1]=40;
+La[2]=41;
+Lb[1]=40;
+Lb[2]=41;
+}
+else if(lelevel==6){
+La[1]=50;
+La[2]=51;
+Lb[1]=50;
+Lb[2]=51;
+}
+else if(lelevel==7){
+La[1]=90;
+La[2]=61;
+Lb[1]=90;
+Lb[2]=61;
+}
+else if(lelevel==8){
+La[1]=130;
+La[2]=71;
+Lb[1]=130;
+Lb[2]=71;
+}
+else if(lelevel==9){
+La[1]=170;
+La[2]=81;
+Lb[1]=170;
+Lb[2]=81;
+}
+else if(lelevel==10){
+La[1]=200*Math.pow(10,pow10);
+La[2]=101*Math.pow(10,pow10);
+Lb[1]=200*Math.pow(10,pow10);
+Lb[2]=101*Math.pow(10,pow10);
+}
+else if(lelevel==11){
+La[1]=270*Math.pow(10,pow10);
+La[2]=131*Math.pow(10,pow10);
+Lb[1]=270*Math.pow(10,pow10);
+Lb[2]=131*Math.pow(10,pow10);
+}
+else if(lelevel==12){
+La[1]=340*Math.pow(10,pow10);
+La[2]=161*Math.pow(10,pow10);
+Lb[1]=340*Math.pow(10,pow10);
+Lb[2]=161*Math.pow(10,pow10);
+}
+else if(lelevel==13){
+La[1]=400*Math.pow(10,pow10);
+La[2]=201*Math.pow(10,pow10);
+Lb[1]=400*Math.pow(10,pow10);
+Lb[2]=201*Math.pow(10,pow10);
+}
+else if(lelevel==14){
+La[1]=550*Math.pow(10,pow10);
+La[2]=251*Math.pow(10,pow10);
+Lb[1]=550*Math.pow(10,pow10);
+Lb[2]=251*Math.pow(10,pow10);
+}
+else if(lelevel==15){
+La[1]=700*Math.pow(10,pow10);
+La[2]=301*Math.pow(10,pow10);
+Lb[1]=700*Math.pow(10,pow10);
+Lb[2]=301*Math.pow(10,pow10);
+}
+else if(lelevel==16){
+La[1]=900*Math.pow(10,pow10);
+La[2]=401*Math.pow(10,pow10);
+Lb[1]=900*Math.pow(10,pow10);
+Lb[2]=401*Math.pow(10,pow10);
+}
+else if(lelevel==17){
+La[1]=1100*Math.pow(10,pow10);
+La[2]=501*Math.pow(10,pow10);
+Lb[1]=1100*Math.pow(10,pow10);
+Lb[2]=501*Math.pow(10,pow10);
+}
+else if(lelevel==18){
+La[1]=1400*Math.pow(10,pow10);
+La[2]=601*Math.pow(10,pow10);
+Lb[1]=1400*Math.pow(10,pow10);
+Lb[2]=601*Math.pow(10,pow10);
+}
+else if(lelevel==19){
+La[1]=1700*Math.pow(10,pow10);
+La[2]=801*Math.pow(10,pow10);
+Lb[1]=1700*Math.pow(10,pow10);
+Lb[2]=801*Math.pow(10,pow10);
+}
+}
+function title(){
+if(level<10&&level>=1){
+lvl = "Trival".fontcolor("lawngreen");
+}
+else if(level<20&&level>=10){
+lvl = "Easy".fontcolor("green");
+}
+else if(level<30&&level>=20){
+lvl = "Medium".fontcolor("yellow");
+}
+else if(level<40&&level>=30){
+lvl = "Hard".fontcolor("orange");
+}
+else if(level<50&&level>=40){
+lvl = "Very Hard".fontcolor("orangered");
+}
+else if(level<60&&level>=50){
+lvl = "Extreme".fontcolor("red");
+}
+else if(level<70&&level>=60){
+lvl = "Light Insane".fontcolor("blueviolet");
+}
+else if(level<80&&level>=70){
+lvl = "Insane".fontcolor("darkmagenta");
+}
+else if(level<90&&level>=80){
+lvl = "Light Crazy".fontcolor("indigo");
+}
+else if(level<100&&level>=90){
+lvl = "Crazy".fontcolor("navy");
+}
+else if(level==100){
+lvl = "Impossible".fontcolor("midnightblue");
+}
+}
+function title2(){
+if(power<10&&power>=1){
+powtitle = "Wood";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="wood"><span id="l" class="l0"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<20&&power>=10){
+powtitle = "Stone";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="stone"><span id="l" class="l0"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<30&&power>=20){
+powtitle = "Copper";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="copper"><span id="l" class="l0"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<40&&power>=30){
+powtitle = "Iron";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="iron"><span id="l" class="l0"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<50&&power>=40){
+powtitle = "Bronze";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="bronze"><span id="l" class="l0"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<60&&power>=50){
+powtitle = "Silver";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="silver"><span id="l" class="l0"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<70&&power>=60){
+powtitle = "Gold";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="gold"><span id="l" class="l0"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<80&&power>=70){
+powtitle = "Platinium";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="platinium"><span id="l" class="l0"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<90&&power>=80){
+powtitle = "Diamond";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="diamond"><span id="l" class="l0"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<100&&power>=90){
+powtitle = "Ruby";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="ruby"><span id="l" class="l0"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<110&&power>=100){
+powtitle = "Emerald";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="emerald"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<120&&power>=110){
+powtitle = "Sapphire";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="sapphire"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<130&&power>=120){
+powtitle = "Amhetyst";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="amhetyst"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<140&&power>=130){
+powtitle = "Obsidian";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="obsidian"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<150&&power>=140){
+powtitle = "Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="legend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<160&&power>=150){
+powtitle = "Bronze Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="bronzelegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<170&&power>=160){
+powtitle = "Silver Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="silverlegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<180&&power>=170){
+powtitle = "Golden Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="goldlegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<190&&power>=180){
+powtitle = "Platinium Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="platiniumlegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<200&&power>=190){
+powtitle = "Diamond Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="diamondlegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<210&&power>=200){
+powtitle = "Ruby Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="rubylegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<220&&power>=210){
+powtitle = "Emerald Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="emeraldlegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<230&&power>=220){
+powtitle = "Sapphire Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="sapphirelegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<240&&power>=230){
+powtitle = "Amhetyst Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="amhetystlegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power<250&&power>=240){
+powtitle = "Obsidian Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="obsidianlegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+if(power>=250){
+powtitle = "Ultimate Legend";
+document.getElementById("xparea").innerHTML='<center><div id="xplevel"  class="ultimatelegend"><span id="l" class="l1"></span></div></center><div id="xpupper"></div><div id="xplower"></div>';
+}
+}
+function next(x){
+dif();
+La[0]=Math.floor(Math.random()*La[1]+La[2]);
+Lb[0]=Math.floor(Math.random()*Lb[1]+Lb[2]);
+document.getElementById("level").innerHTML="Level "+level+" "+lvl;
+document.getElementById("quest").innerHTML=La[0]+" * "+Lb[0];
+if(x==1){
+if(level<maxlvl)document.getElementById("score").innerHTML="Score "+score[0]+" / "+score[1];
+else document.getElementById("score").innerHTML="Max level";
+}
+else if(x==2){
+if(level<maxlvl)document.getElementById("score").innerHTML="Score "+score[2]+" / "+score[3];
+else document.getElementById("score").innerHTML="Max level";
+}
+else if(x==3){
+document.getElementById("lives").innerHTML="Lives "+lives;
+}
+else if(x==4){
+if(level<maxlvl)document.getElementById("score").innerHTML="Score "+score[4]+" / "+score[5];
+else document.getElementById("score").innerHTML="Max level";
+}
+else if(x==5){
+if(level<maxlvl)document.getElementById("score").innerHTML="Score "+score[6]+" / "+score[7];
+else document.getElementById("score").innerHTML="Max level";
+}
+lvlpow();
+}
+function check(){
+if(mod==1){
+var an = parseInt(document.getElementById("answer").value);
+if(an==(La[0]*Lb[0])){
+good(1);
+}
+else{
+bad(1);
+}
+}
+else if(mod==2){
+var an = parseInt(document.getElementById("answer").value);
+if(an==(La[0]*Lb[0])){
+good(2);
+}
+else{
+bad(2);
+}
+}
+else if(mod==3){
+var an = parseInt(document.getElementById("answer").value);
+if(an==(La[0]*Lb[0])){
+good(3);
+}
+else{
+bad(3);
+}
+}
+else if(mod==4){
+var an = parseInt(document.getElementById("answer").value);
+if(an==(La[0]*Lb[0])){
+good(4);
+}
+else{
+bad(4);
+}
+}
+else if(mod==5){
+var an = parseInt(document.getElementById("answer").value);
+if(an==(La[0]*Lb[0])){
+good(5);
+}
+else{
+bad(5);
+}
+}
+}
+function lvlpow(){
+if(xp[0]>=xp[1]){
+while(xp[0]>=xp[1]){
+power++;
+xp[0]-=xp[1];
+xp[1]+=30*power;
+xp[1]*=1.08;
+}}
+kxp[0]=xp[0]/1e3;kxp[1]=xp[1]/1e3;
+mxp[0]=xp[0]/1e6;mxp[1]=xp[1]/1e6;
+bxp[0]=xp[0]/1e9;bxp[1]=xp[1]/1e9;
+txp[0]=xp[0]/1e12;txp[1]=xp[1]/1e12;
+qaxp[0]=xp[0]/1e15;qaxp[1]=xp[1]/1e15;
+qtxp[0]=xp[0]/1e18;qtxp[1]=xp[1]/1e18;
+title2();
+document.getElementById("l").innerHTML=power;
+document.getElementById("xpupper").innerHTML=powtitle;
+if(xp[1]<1e3){
+document.getElementById("xplower").innerHTML=xp[0].toFixed(0)+" / "+xp[1].toFixed(0)+" XP";
+}
+else if(xp[1]<1e6&&xp[1]>=1e3){
+if(xp[0]<1e3)document.getElementById("xplower").innerHTML=xp[0].toFixed(0)+" / "+kxp[1].toFixed(2)+"K XP";
+else if(xp[0]>=1e3)document.getElementById("xplower").innerHTML=kxp[0].toFixed(2)+"K / "+kxp[1].toFixed(2)+"K XP";
+}
+else if(xp[1]<1e9&&xp[1]>=1e6){
+if(xp[0]<1e3)document.getElementById("xplower").innerHTML=xp[0].toFixed(0)+" / "+mxp[1].toFixed(2)+"M XP";
+else if(xp[0]<1e6&&xp[0]>=1e3)document.getElementById("xplower").innerHTML=kxp[0].toFixed(2)+"K / "+mxp[1].toFixed(2)+"M XP";
+else if(xp[0]>=1e6)document.getElementById("xplower").innerHTML=mxp[0].toFixed(2)+"M / "+mxp[1].toFixed(2)+"M XP";
+}
+else if(xp[1]<1e12&&xp[1]>=1e9){
+if(xp[0]<1e3)document.getElementById("xplower").innerHTML=xp[0].toFixed(0)+" / "+bxp[1].toFixed(2)+"B XP";
+else if(xp[0]<1e6&&xp[0]>=1e3)document.getElementById("xplower").innerHTML=kxp[0].toFixed(2)+"K / "+bxp[1].toFixed(2)+"B XP";
+else if(xp[0]<1e9&&xp[0]>=1e6)document.getElementById("xplower").innerHTML=mxp[0].toFixed(2)+"M / "+bxp[1].toFixed(2)+"B XP";
+else if(xp[0]>=1e9)document.getElementById("xplower").innerHTML=bxp[0].toFixed(2)+"B / "+bxp[1].toFixed(2)+"B XP";
+}
+else if(xp[1]<1e15&&xp[1]>=1e12){
+if(xp[0]<1e6)document.getElementById("xplower").innerHTML=kxp[0].toFixed(0)+" / "+"K / "+txp[1].toFixed(2)+"T XP";
+else if(xp[0]<1e9&&xp[0]>=1e6)document.getElementById("xplower").innerHTML=mxp[0].toFixed(2)+"M / "+txp[1].toFixed(2)+"T XP";
+else if(xp[0]<1e12&&xp[0]>=1e9)document.getElementById("xplower").innerHTML=bxp[0].toFixed(2)+"B / "+txp[1].toFixed(2)+"T XP";
+else if(xp[0]>=1e12)document.getElementById("xplower").innerHTML=txp[0].toFixed(2)+"T / "+txp[1].toFixed(2)+"T XP";
+}
+else if(xp[1]<1e18&&xp[1]>=1e15){
+if(xp[0]<1e6)document.getElementById("xplower").innerHTML=mxp[0].toFixed(0)+" / "+"M / "+qaxp[1].toFixed(2)+"Qa XP";
+else if(xp[0]<1e12&&xp[0]>=1e9)document.getElementById("xplower").innerHTML=bxp[0].toFixed(2)+"B / "+qaxp[1].toFixed(2)+"Qa XP";
+else if(xp[0]<1e15&&xp[0]>=1e12)document.getElementById("xplower").innerHTML=txp[0].toFixed(2)+"T / "+qaxp[1].toFixed(2)+"Qa XP";
+else if(xp[0]>=1e15)document.getElementById("xplower").innerHTML=qaxp[0].toFixed(2)+"Qa / "+qaxp[1].toFixed(2)+"Qa XP";
+}
+else if(xp[1]>=1e18){
+if(xp[0]<1e12)document.getElementById("xplower").innerHTML=bxp[0].toFixed(0)+" / "+"B / "+qtxp[1].toFixed(2)+"Qt XP";
+else if(xp[0]<1e15&&xp[0]>=1e12)document.getElementById("xplower").innerHTML=txp[0].toFixed(2)+"T / "+qtxp[1].toFixed(2)+"Qt XP";
+else if(xp[0]<1e18&&xp[0]>=1e15)document.getElementById("xplower").innerHTML=qaxp[0].toFixed(2)+"Qa / "+qtxp[1].toFixed(2)+"Qt XP";
+else if(xp[0]>=1e18)document.getElementById("xplower").innerHTML=qtxp[0].toFixed(2)+"Qt / "+qtxp[1].toFixed(2)+"Qt XP";
+}
+}
+function good(x){
+function goodxp(){
+if(xpplus<1000)document.getElementById("quest").innerHTML="Good ".fontcolor("lime")+(" +"+ xpplus.toFixed(0)+" XP").fontcolor("aqua");
+else if(xpplus>=1000&&xpplus<1000000)document.getElementById("quest").innerHTML="Good ".fontcolor("lime")+(" +"+ kxpplus.toFixed(2)+"K XP").fontcolor("aqua");
+else if(xpplus>=1000000&&xpplus<1e9)document.getElementById("quest").innerHTML="Good ".fontcolor("lime")+(" +"+ mxpplus.toFixed(2)+"M XP").fontcolor("aqua");
+else if(xpplus>=1e9)document.getElementById("quest").innerHTML="Good ".fontcolor("lime")+(" +"+ bxpplus.toFixed(2)+"B XP").fontcolor("aqua");
+}
+function greatxp(){
+if(xpplus<1000)document.getElementById("quest").innerHTML="Great ".fontcolor("aqua")+(" +"+ xpplus.toFixed(0)+" XP").fontcolor("aqua");
+else if(xpplus>=1000&&xpplus<1000000)document.getElementById("quest").innerHTML="Great ".fontcolor("aqua")+(" +"+ kxpplus.toFixed(2)+"K XP").fontcolor("aqua");
+else if(xpplus>=1000000&&xpplus<1e9)document.getElementById("quest").innerHTML="Great ".fontcolor("aqua")+(" +"+ mxpplus.toFixed(2)+"M XP").fontcolor("aqua");
+else if(xpplus>=1e9)document.getElementById("quest").innerHTML="Great ".fontcolor("aqua")+(" +"+ bxpplus.toFixed(2)+"B XP").fontcolor("aqua");
+}
+goods++;
+La[0]=Math.floor(Math.random()*La[1]+La[2]);
+Lb[0]=Math.floor(Math.random()*Lb[1]+Lb[2]);
+if(x==1){
+xpplus=level*Math.sqrt(La[1]+La[2]-1+La[0]+Lb[0])*1.5;
+kxpplus=xpplus/1000;
+mxpplus=xpplus/1000000;
+bxpplus=xpplus/1e9;
+xp[0]+=xpplus;9
+xp[2]+=xpplus;
+lvlpow();
+score[0]+=1;
+if(score[0]>=score[1]){
+greatxp();
+if(level<maxlvl)score[0]-=score[1];
+if(level<maxlvl){
+level++;
+savelevel[0]=level;
+}
+score[1]=8+level*2;
+title();
+}
+else{
+goodxp();
+}
+window.setTimeout('next(1);',1000);
+}
+else if(x==2){
+xpplus=level*Math.sqrt(La[1]+La[2]-1+La[0]+Lb[0])*1.3;
+kxpplus=xpplus/1000;
+mxpplus=xpplus/1000000;
+bxpplus=xpplus/1e9;
+xp[0]+=xpplus;
+xp[2]+=xpplus;
+lvlpow();
+score[2]+=1;
+if(score[2]>=score[3]){
+greatxp();
+if(level<maxlvl)score[2]-=score[3];
+if(level<maxlvl){
+level++;
+savelevel[1]=level;
+}
+score[3]=4+level;
+title();
+}
+else{
+goodxp();
+}
+window.setTimeout('next(2);',1000);
+}
+else if(x==3){
+xpplus=level*Math.sqrt(La[1]+La[2]-1+La[0]+Lb[0])*0.6;
+kxpplus=xpplus/1000;
+mxpplus=xpplus/1000000;
+bxpplus=xpplus/1e9;
+xp[0]+=xpplus;
+xp[2]+=xpplus;
+lvlpow();
+greatxp();
+if(level<maxlvl){
+level++;
+savelevel[2]=level;
+}
+title();
+window.setTimeout('next(3);',1000);
+}
+else if(x==4){
+xpplus=level*Math.sqrt(La[1]+La[2]-1+La[0]+Lb[0])*1.8;
+kxpplus=xpplus/1000;
+mxpplus=xpplus/1000000;
+bxpplus=xpplus/1e9;
+xp[0]+=xpplus;
+xp[2]+=xpplus;
+lvlpow();
+score[4]+=1;
+if(score[4]>=score[5]){
+greatxp();
+if(level<maxlvl)score[4]-=score[5];
+if(level<maxlvl){
+level++;
+savelevel[3]=level;
+}
+score[5]=12+level*3;
+title();
+}
+else{
+goodxp();
+}
+window.setTimeout('next(4);',1000);
+}
+else if(x==5){
+xpplus=level*Math.sqrt(La[1]+La[2]-1+La[0]+Lb[0]);
+kxpplus=xpplus/1000;
+mxpplus=xpplus/1000000;
+bxpplus=xpplus/1e9;
+xp[0]+=xpplus;
+xp[2]+=xpplus;
+lvlpow();
+score[6]+=1;
+if(score[6]>=score[7]){
+greatxp();
+if(level<maxlvl)score[6]-=score[7];
+if(level<maxlvl){
+level++;
+savelevel[4]=level;
+}
+score[7]=10+Math.trunc(level*0.5);
+title();
+}
+else{
+goodxp();
+}
+window.setTimeout('next(5);',1000);
+}
+}
+function bad(x){
+bads++;
+document.getElementById("quest").innerHTML="Mistake".fontcolor("red");
+if(x==1){
+if(level==1&&score[0]<2){
+score[0]=0;
+}
+else{
+score[0]-=2;
+}
+if(score[0]<0){
+level--;
+savelevel[0]=level;
+score[1]=8+level*2;
+score[0]+=score[1];
+title();
+}
+window.setTimeout('next(1);',1000);
+}
+else if(x==2){
+if(level==1&&score[2]<2){
+score[2]=0;
+}
+else{
+score[2]-=2;
+}
+if(score[2]<0){
+level--;
+savelevel[1]=level;
+score[3]=4+level;
+score[2]+=score[3];
+title();
+}
+window.setTimeout('next(2);',1000);
+}
+else if(x==3){
+lives--;
+if(lives<=0)loser();
+window.setTimeout('next(3);',1000);
+}
+else if(x==4){
+if(level==1&&score[4]<4){
+score[4]=0;
+}
+else{
+score[4]-=4;
+}
+if(score[4]<0){
+level--;
+savelevel[3]=level;
+score[5]=12+level*3;
+score[4]+=score[5];
+title();
+}
+window.setTimeout('next(4);',1000);
+}
+else if(x==5){
+score[6]=0;
+title();
+window.setTimeout('next(5);',1000);
+}
+}
+function loser(){
+lives=5;
+maxlevel[2]=level;
+savelevel[2]=1;
+level=1;
+document.getElementById("main").innerHTML='<div id="con"><center><div class="half_space"></div><span class="big">Defeat</span></center><div class="half_space"></div><input id="losemenu" class="But_mode" type="button" value="Menu" onclick="modes()"><div class="half_space"></div><input id="try" class="But_mode" type="button" value="Try agin" onclick="mode3()"></div>';
+}
+name();
+</script>
+</body>
+</html>
